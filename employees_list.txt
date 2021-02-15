@@ -1,0 +1,7 @@
+Ivanov 10000.00
+Petrov 15000.00
+Sidorov 25000.00
+Vasilev 19000.00
+Mishustin 29000.00
+Lebedev 12000.00
+Frolov 23500.00

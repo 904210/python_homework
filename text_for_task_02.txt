@@ -1,0 +1,3 @@
+String 1: A blessing in disguise.
+String 2: Better late than never.
+String 3: No pain, no gain.
