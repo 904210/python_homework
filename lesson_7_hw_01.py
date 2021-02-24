@@ -1,30 +1,22 @@
 class Matrix:
-    def __init__(self, lst_one, lst_two, lst_three):
-        self.lst_one = lst_one
-        self.lst_two = lst_two
-        self.lst_three = lst_three
-        self.matrix = [
-            lst_one.split(),
-            lst_two.split(),
-            lst_three.split()
-            ]
+    def __init__(self, matrix):
+        self.matrix = matrix
 
     def __str__(self):
-        return f'{self.lst_one}\n{self.lst_two}\n{self.lst_three}'
+        return '\n'.join([''.join(['%d\t' % i for i in row]) for row in self.matrix])
 
     def __add__(self, other):
-        total = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+        matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
         for i in range(3):
             for j in range(3):
-                total[i][j] = int(self.matrix[i][j]) + int(other.matrix[i][j])
-        for el in total:
-            print(*el)
+                matrix[i][j] = self.matrix[i][j] + other.matrix[i][j]
+        return Matrix(matrix)
 
 
-matrix_one = Matrix('4 5 6', '7 8 9', '1 2 3')
-matrix_two = Matrix('4 5 6', '4 1 2', '7 8 9')
+matrix_one = Matrix([[4, 5, 6], [7, 8, 9], [1, 2, 3]])
+matrix_two = Matrix([[2, 4, 3], [6, 3, 2], [5, 1, 4]])
 print(matrix_one)
 print()
 print(matrix_two)
 print()
-matrix_one + matrix_two
+print(matrix_one + matrix_two)

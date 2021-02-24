@@ -15,7 +15,10 @@ class Cell:
         return Cell(self.quantity * other.quantity)
 
     def __truediv__(self, other):
-        return Cell(round(self.quantity / other.quantity))
+        if other.quantity == 0:
+            print(f'wrong operation: division by zero')
+        else:
+            return Cell(round(self.quantity / other.quantity))
 
     def make_order(self, per_row):
         rows, tail = self.quantity // per_row, self.quantity % per_row
@@ -27,10 +30,12 @@ class Cell:
 
 cells_one = Cell(25)
 cells_two = Cell(14)
+cell_three = Cell(0)
 print(cells_one)
 print(cells_one + cells_two)
 print(cells_two - cells_one)
 print(cells_two * cells_one)
 print(cells_one / cells_two)
+print(cells_one / cell_three)
 print(cells_two.make_order(5))
 print(cells_one.make_order(10))
