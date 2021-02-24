@@ -7,7 +7,7 @@ class Cell:
 
     def __sub__(self, other):
         if self.quantity > other.quantity:
-            return self.quantity - other.quantity
+            return Cell(self.quantity - other.quantity)
         else:
             print(f'{self.quantity} - {other.quantity}: wrong operation')
 
@@ -34,6 +34,7 @@ cell_three = Cell(0)
 print(cells_one)
 print(cells_one + cells_two)
 print(cells_two - cells_one)
+print(cells_one - cells_two)
 print(cells_two * cells_one)
 print(cells_one / cells_two)
 print(cells_one / cell_three)

@@ -6,15 +6,15 @@ class Matrix:
         return '\n'.join([''.join(['%d\t' % i for i in row]) for row in self.matrix])
 
     def __add__(self, other):
-        matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-        for i in range(3):
-            for j in range(3):
+        matrix = [[0 * el for el in range(len(self.matrix[0]))] for _ in range(len(self.matrix))]
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
                 matrix[i][j] = self.matrix[i][j] + other.matrix[i][j]
         return Matrix(matrix)
 
 
-matrix_one = Matrix([[4, 5, 6], [7, 8, 9], [1, 2, 3]])
-matrix_two = Matrix([[2, 4, 3], [6, 3, 2], [5, 1, 4]])
+matrix_one = Matrix([[4, 5, 6, 5], [7, 8, 9, 2], [1, 2, 3, 1]])
+matrix_two = Matrix([[2, 4, 3, 2], [6, 3, 2, 2], [5, 1, 4, 2]])
 print(matrix_one)
 print()
 print(matrix_two)
