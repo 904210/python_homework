@@ -9,14 +9,14 @@ class Cell:
         if self.quantity > other.quantity:
             return Cell(self.quantity - other.quantity)
         else:
-            print(f'{self.quantity} - {other.quantity}: wrong operation')
+            return f'{self.quantity} - {other.quantity}: wrong operation'
 
     def __mul__(self, other):
         return Cell(self.quantity * other.quantity)
 
     def __truediv__(self, other):
         if other.quantity == 0:
-            print(f'wrong operation: division by zero')
+            return f'wrong operation: division by zero'
         else:
             return Cell(round(self.quantity / other.quantity))
 
